@@ -14,23 +14,27 @@
     class App extends React.Component {
         state={
             name : "Igor",
-            age : 47
+            age : 46
         }
-        handleClick(e){
-            console.log(e.target);
-            //console.log(state);
+        handleClick = (e) => {
+            //console.log(e.target);
+            this.setState({
+                age : 47,
+                name : "Igor Birkan"
+            });
+            console.log(this.state);
         }
-        handleMouseOver(e){
+        handleMouseOver = (e) => {
             console.log(e.target , e.pageX);
         }
-        handleCopy(e){
+        handleCopy = (e) => {
             console.log("Copied !")
         }
       render(){
         return(
           <div className="app-content">
             <h2>Hello, Ninjas !</h2>
-            <p>My name is : {this.state.name} and I amd {this.state.age }</p>
+            <p>My name is : {this.state.name} and I am {this.state.age }</p>
             <button onClick={this.handleClick}>Click Me</button>
             <button onMouseOver={this.handleMouseOver}>Hover Me</button>
             <p onCopy={this.handleCopy}>Try to copy me</p>
